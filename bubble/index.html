@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Bubble trouble</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="bubble-trouble">Bubble trouble</h1>
+<p>After implementing our flying_balls application, we had a look at the game &quot;Bubble Trouble&quot;, where a player fires on bouncing balls (resp. bubbles).
+Mitch Koko has published a lot of videos where he is implementing simple versions of several games, e.g. Tetris, Flappy Bird or Mine Sweeper, and also for Bubble Trouble.
+See a list of all his videos <a href="https://www.youtube.com/playlist?list=PLlvRDpXh1Se6kipeBLiF1xByAEmxYie6J">here</a> and the video on Bubble Trouble <a href="https://www.youtube.com/watch?v=ZBLOxhiym7k">here</a>.</p>
+<p>Mitch said, that the code developed in these videos can be found on his home page, but unfortunately we did not find it. What we found was e.g. a page, where you must pay to get his code for Tetris, see <a href="https://mitchkoko.gumroad.com/l/TetrisGameFlutter">here</a>.</p>
+<p>But on GitHub we found several repositories where Bubble Trouble was implemented in Flutter according to Mitch's video, e.g. from <a href="https://github.com/irinavasilescu/bubble_trouble">Irina Vasilescu</a> and a French developer called <a href="https://github.com/navalnorth/bubbleTrouble_flutter">navalnorth</a>.</p>
+<p>We have forked navalnorth's repository into our fdg2425 GitHub account under <a href="https://github.com/fdg2425/bubbleTrouble_flutter_navalnorth_forked">bubbleTrouble_flutter_navalnorth_forked</a> and in branch gs_ideas, we have implemented several enhancements, e.g.</p>
+<ul>
+<li>put more responsibility into the classes Player, Missile and Ball and thus simplify homepage.dart</li>
+<li>position the elements in the playground on a pixel base by using widget Positioned and not using the alignment property in a Container</li>
+<li>provide an auto-repeater for the buttons to move the player</li>
+<li>allow to move the player by panning gestures</li>
+<li>let the balls have differents sizes and speed, and let big balls split into 2 balls when hit by the missile</li>
+<li>offer a settings page where the user can e.g. select between 2 different layouts (the one from Mitch and the one from Irina)</li>
+<li>add some simple animation when the game starts</li>
+</ul>
+<p>We have created 3 WebApps to demonstrate what was implemented</p>
+<ul>
+<li>by Irina, see <a href="https://fdg2425.github.io/webtest/bubble/irina_branch_fdg2425">https://fdg2425.github.io/webtest/bubble/irina_branch_fdg2425</a></li>
+<li>by navalnorth, see <a href="https://fdg2425.github.io/webtest/bubble/navalnorth_branch_end_of_mitch_video/">https://fdg2425.github.io/webtest/bubble/navalnorth_branch_end_of_mitch_video/</a></li>
+<li>in our branch gs_ideas, see <a href="https://fdg2425.github.io/webtest/bubble/navalnorth_branch_gs_ideas/">https://fdg2425.github.io/webtest/bubble/navalnorth_branch_gs_ideas/</a></li>
+</ul>
+
+            
+            
+        </body>
+        </html>
