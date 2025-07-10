@@ -17,6 +17,7 @@ We have forked navalnorth's repository into our fdg2425 GitHub account under [bu
 - as an alternative to buttons, allow to move the player by panning gestures
 - to make the game more varied, let the balls have differents sizes and speed, and let big balls split into 2 balls when hit by the missile
 - offer a settings page where the user can e.g. select between 2 different layouts (the one from Mitch in pink & grey and the one from Irina in blue & green)
+-  use a "pixeloid" font for the game title (copied from Irina)
 - add some simple animation when the game starts
   
 We have created 3 WebApps to demonstrate what was implemented 
